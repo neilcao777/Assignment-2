@@ -7,18 +7,20 @@ function loadEvents() {
       for (i = 0; i < x.length; i++) {
         $("main").append(
           `
-        <p>
-            Text: ${x[i].text}
-        <br>
-            Time: ${x[i].time}
-        <br>
-            Hits: ${x[i].hits}
-        <br>
-            <button class="LikeButton" id="${x[i]["_id"]}"> Like! </button>
-        <br>
-            <button class="DeleteButton" id="${x[i]["_id"]}"> Delete </button>
+        <div class="wrapper">
+          <p>
+              Text: ${x[i].text}
+          <br>
+              Time: ${x[i].time}
+          <br>
+              Hits: ${x[i].hits}
+          <p/>
+              <button class="LikeButton" id="${x[i]["_id"]}"> Like! </button>
+              <button class="DeleteButton" id="${x[i]["_id"]}"> Delete </button>
+          <hr>
+        </div>
 
-        <p/>
+        
           
           `
         );
