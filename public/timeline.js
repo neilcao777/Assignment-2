@@ -9,19 +9,18 @@ function loadEvents() {
           `
         <div class="wrapper">
           <p>
-              Text: ${x[i].text}
+              Event: ${x[i].text}
           <br>
               Time: ${x[i].time}
           <br>
               Hits: ${x[i].hits}
           <p/>
               <button class="LikeButton" id="${x[i]["_id"]}"> Like! </button>
+              <button class="DislikeButton" id="${x[i]["_id"]}"> DisLike! </button>
               <button class="DeleteButton" id="${x[i]["_id"]}"> Delete </button>
           <hr>
         </div>
-
-        
-          
+         
           `
         );
       }
@@ -54,10 +53,22 @@ function increamentHitsByOne() {
   //   $("main").load(location.href + " main");
 }
 
+function decreaseHitsByOne() {
+  x = this.id;
+  $.ajax({
+    url: `http://localhost:5000/timeline/decreaseHits/${x}`,
+    type: "get",
+    success: (e) => {
+      console.log(e);
+    },
+  });
+}
+
 function setup() {
   loadEvents();
 
   $("body").on("click", ".LikeButton", increamentHitsByOne);
+  $("body").on("click", ".DislikeButton", decreaseHitsByOne);
   $("body").on("click", ".DeleteButton", deleteData);
 }
 
