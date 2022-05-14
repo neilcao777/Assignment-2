@@ -226,7 +226,6 @@ function insert_filter_event_to_timeline(poke_type) {
       console.log(r);
     },
   });
-  window.timeline.reload();
 }
 
 function setup() {
