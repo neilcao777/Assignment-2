@@ -203,7 +203,6 @@ function search_pokemon() {
   //   });
   // }
   insert_search_event_to_timeline(nameOrID);
-  insert_profile_event_to_timeline(nameOrID);
   jQuery("#history").append(history_remove);
 }
 
@@ -227,6 +226,7 @@ function insert_filter_event_to_timeline(poke_type) {
       console.log(r);
     },
   });
+  window.timeline.reload();
 }
 
 function setup() {

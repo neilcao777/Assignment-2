@@ -10,15 +10,16 @@ function loadEvents() {
         <div class="wrapper">
           <p>
               Event: ${x[i].text}
-          <br>
+          <br><hr>
               Time: ${x[i].time}
-          <br>
+          <br><hr>
               Hits: ${x[i].hits}
+              <hr>
           <p/>
+          <br>
               <button class="LikeButton" id="${x[i]["_id"]}"> Like! </button>
               <button class="DislikeButton" id="${x[i]["_id"]}"> DisLike! </button>
               <button class="DeleteButton" id="${x[i]["_id"]}"> Delete </button>
-          <hr>
         </div>
          
           `
@@ -37,6 +38,7 @@ function deleteData() {
       console.log(e);
     },
   });
+  window.location.reload();
 }
 
 function increamentHitsByOne() {
@@ -51,6 +53,7 @@ function increamentHitsByOne() {
 
   //   reload the main div
   //   $("main").load(location.href + " main");
+  window.location.reload();
 }
 
 function decreaseHitsByOne() {
@@ -62,6 +65,7 @@ function decreaseHitsByOne() {
       console.log(e);
     },
   });
+  window.location.reload();
 }
 
 function setup() {
